@@ -3,9 +3,6 @@ import json
 import sys
 
 # Make sure to replace 'your-openai-api-key' with your actual OpenAI API key
-# openai.api_key = 'sk-proj-expOpqxZmNpZ2C0A1awgT3BlbkFJutnAo0YcByYk8phanuzY'
-
-openai.api_key = "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"
 
 def summarize_json(json_input):
     # Convert the JSON input to a string
