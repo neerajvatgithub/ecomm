@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Indian Name Generator</title>
+    <style>
+        :root {
+            --primary-color: #FF9933;
+            --secondary-color: #138808;
+            --accent-color: #000080;
+            --text-color: #333;
+        }
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #FFC0CB, #87CEFA);
+            color: var(--text-color);
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            border-radius: 12px;
+        }
+        h1 {
+            color: var(--primary-color);
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 2.5em;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+        }
+        form {
+            background-color: white;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: var(--accent-color);
+            font-weight: bold;
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 16px;
+            transition: border-color 0.3s ease;
+        }
+        input[type="text"]:focus {
+            border-color: var(--primary-color);
+            outline: none;
+        }
+        .radio-group {
+            margin-bottom: 20px;
+        }
+        .radio-group label {
+            display: inline-block;
+            margin-right: 20px;
+            cursor: pointer;
+        }
+        button {
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+        button:hover {
+            background-color: #0f6606;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            background-color: white;
+            margin-bottom: 15px;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+        li:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+        }
+        .name {
+            font-weight: bold;
+            color: var(--primary-color);
+            font-size: 1.2em;
+        }
+        .meaning {
+            color: var(--accent-color);
+            font-style: italic;
+            margin-top: 5px;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Indian Name Generator</h1>
+        <form method="POST">
+            <label for="letter">Enter a starting letter:</label>
+            <input type="text" id="letter" name="letter" maxlength="1" required>
+
+            <div class="radio-group">
+                <label>Select gender:</label>
+                <label>
+                    <input type="radio" name="gender" value="male" required>
+                    Male
+                </label>
+                <label>
+                    <input type="radio" name="gender" value="female" required>
+                    Female
+                </label>
+            </div>
+
+            <button type="submit">Generate Names</button>
+        </form>
+
+        {% if names %}
+            <h2>Generated Names:</h2>
+            <ul>
+            {% for name in names %}
+                <li>
+                    {% set name_parts = name.split(': ') %}
+                    <span class="name">{{ name_parts[0] }}</span>
+                    <span class="meaning">{{ name_parts[1] }}</span>
+                </li>
+            {% endfor %}
+            </ul>
+        {% endif %}
+    </div>
+</body>
+</html>
