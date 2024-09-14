@@ -2,7 +2,6 @@ import openai
 import json
 
 # Make sure to replace 'your-openai-api-key' with your actual OpenAI API key
-openai.api_key = 'sk-proj-expOpqxZmNpZ2C0A1awgT3BlbkFJutnAo0YcByYk8phanuzY'
 
 
 def summarize_json(json_input):
