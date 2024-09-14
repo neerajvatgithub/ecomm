@@ -2,6 +2,5 @@ fuzzywuzzy
 python-Levenshtein
 streamlit
 pandas
-io
 chardet
-os
+
