@@ -66,9 +66,9 @@ st.markdown("""
 
 <style>
     /* Targeting the slider track */
-    .stSlider > div[data-baseweb = "slider"] > div[data-testid="stTickBar"] {
-        background: #E8F5E9;
-    }
+    # .stSlider > div[data-baseweb = "slider"] > div[data-testid="stTickBar"] {
+    #     background: #4CAF50;
+    # }
     
     /* Targeting the slider handle */
     .stSlider > div[data-baseweb="slider"] > div > div > div[role="slider"] {
