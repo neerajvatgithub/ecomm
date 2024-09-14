@@ -5,7 +5,6 @@ import os
 app = Flask(__name__)
 
 # Set up OpenAI API key
-openai.api_key = 'sk-proj-expOpqxZmNpZ2C0A1awgT3BlbkFJutnAo0YcByYk8phanuzY'
 
 # Use a raw string for the template folder path
 template_dir = r'C:\Users\neerajv\PycharmProjects\pythonProject1'
