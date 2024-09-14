@@ -3,7 +3,7 @@ from youtube_transcript_api import YouTubeTranscriptApi
 import re
 
 # Set your OpenAI API key
-openai.api_key = 'sk-proj-expOpqxZmNpZ2C0A1awgT3BlbkFJutnAo0YcByYk8phanuzY'
+
 
 
 def extract_video_id(url):
